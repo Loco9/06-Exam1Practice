@@ -2,8 +2,8 @@
 PRACTICE Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Logan Cody.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -37,7 +37,7 @@ def main():
 def run_test_problem3a():
     """ Tests the   problem3a   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   5   ** tests (we wrote four for you).
     # ------------------------------------------------------------------
@@ -95,13 +95,22 @@ def run_test_problem3a():
     print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
-    window3.close_on_mouse_click()
 
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
     # Below this comment (or integrated with one of the above tests,
     # your choice), add 1 more test case of your own choosing.
     # ------------------------------------------------------------------
+
+    # Test 5
+    point = rg.Point(50, 100)
+    expected = 25
+    answer = problem3a(window3, point, 5)
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    window3.close_on_mouse_click()
 
 
 def problem3a(window, point, n):
@@ -145,6 +154,15 @@ def problem3a(window, point, n):
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # ------------------------------------------------------------------
+
+    line = rg.Line(point, 50)
+    line.attach_to(window)
+    line.thickness = 1
+
+    for _ in range(n - 1):
+        line1 = rg.Line()
+        line1.attach_to(window)
+
 
 
 def run_test_problem3b():
