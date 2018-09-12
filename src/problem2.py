@@ -102,7 +102,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -116,6 +116,18 @@ def problem2a(circle, rectangle, window):
 
     rectangle1 = rectangle
     rectangle1.attach_to(window)
+
+    arrow_start = rectangle.get_upper_right_corner()
+    arrow_end = rectangle.get_lower_left_corner()
+
+    line1 = rg.Line(arrow_start, arrow_end)
+    line1.arrow = 'last'
+    line1.attach_to(window)
+
+
+    circle.fill_color = rectangle.outline_color
+
+    window.render()
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
