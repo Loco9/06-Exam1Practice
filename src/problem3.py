@@ -173,7 +173,6 @@ def problem3a(window, point, n):
         start = rg.Point(start.x + 20, start.y + 10)
         end = rg.Point(end.x + 20, start.y + 60)
 
-
     window.render()
 
 def run_test_problem3b():
