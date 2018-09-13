@@ -159,18 +159,18 @@ def problem3a(window, point, n):
     line = rg.Line(point, rg.Point(point.x, point.y + 50))
     line.attach_to(window)
     line.thickness = 1
-
+    count = 1
     start = rg.Point(point.x + 20, point.y + 10)
     end = rg.Point(point.x + 20, point.y + 60)
     t = 3
-    count = 1
     for _ in range(n - 1):
         count = count + t
         line1 = rg.Line(start, end)
         line1.attach_to(window)
         line1.thickness = t
-        if line1.thickness <= 13:
+        if line1.thickness < 13:
             t = t + 2
+
         start = rg.Point(start.x + 20, start.y + 10)
         end = rg.Point(end.x + 20, start.y + 60)
 
@@ -247,6 +247,8 @@ def problem3b(m, point1):
     #    DIFFICULTY:      8 or 9
     #    TIME ESTIMATE:   20 to 30 minutes.
     # ------------------------------------------------------------------
+
+    window = rg.RoseWindow(400, 650)
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
