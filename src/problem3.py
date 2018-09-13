@@ -85,6 +85,7 @@ def run_test_problem3a():
 
     # Window 3:
     title = 'Problem 3a. Test 4: Start at (30, 30), 20 lines'
+    title += '           Test 5: Start at (25, 150), 5 lines'
     window3 = rg.RoseWindow(450, 300, title)
 
     # Test 4 (it is on window 3):
@@ -103,7 +104,7 @@ def run_test_problem3a():
     # ------------------------------------------------------------------
 
     # Test 5
-    point = rg.Point(50, 100)
+    point = rg.Point(25, 150)
     expected = 25
     answer = problem3a(window3, point, 5)
     print()
@@ -155,15 +156,25 @@ def problem3a(window, point, n):
     #    TIME ESTIMATE:   20 to 35 minutes.
     # ------------------------------------------------------------------
 
-    line = rg.Line(point, 50)
+    line = rg.Line(point, rg.Point(point.x, point.y + 50))
     line.attach_to(window)
     line.thickness = 1
 
+    start = rg.Point(point.x + 20, point.y + 10)
+    end = rg.Point(point.x + 20, point.y + 60)
+    t = 3
+
     for _ in range(n - 1):
-        line1 = rg.Line()
+        line1 = rg.Line(start, end)
         line1.attach_to(window)
+        line1.thickness = t
+        if line1.thickness <= 13:
+            t = t + 2
+        start = rg.Point(start.x + 20, start.y + 10)
+        end = rg.Point(end.x + 20, start.y + 60)
 
 
+    window.render()
 
 def run_test_problem3b():
     """ Tests the   problem3b   function. """
