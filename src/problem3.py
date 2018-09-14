@@ -172,7 +172,7 @@ def problem3a(window, point, n):
             t = t + 2
 
         start = rg.Point(start.x + 20, start.y + 10)
-        end = rg.Point(end.x + 20, start.y + 60)
+        end = rg.Point(end.x + 20, start.y + 50)
 
         window.render()
     return count
