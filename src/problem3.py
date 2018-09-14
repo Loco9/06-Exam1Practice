@@ -234,7 +234,7 @@ def problem3b(m, point1):
         :type point1: rg.Point
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -249,6 +249,22 @@ def problem3b(m, point1):
     # ------------------------------------------------------------------
 
     window = rg.RoseWindow(400, 650)
+    point = point1
+    n = 3
+    thick = 0
+    t = problem3a(window, point1, n)
+    thick = thick + t
+    for _ in range(m - 1):
+        point = rg.Point(point.x, point.y + 60)
+        n = n + 2
+        t = problem3a(window, point, n)
+        thick = thick + t
+    window.render()
+    window.close_on_mouse_click()
+
+    return thick
+
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
